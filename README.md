@@ -2,7 +2,7 @@
 
 This repository contains the implementation and evaluation of Deep Averaging Network (DAN) models for sentiment classification on the Stanford Sentiment Treebank dataset.
 
-## 📁 Project Structure
+## Project Structure
 
 - `DANmodels.py` – Implements 2-layer and 3-layer DANs using:
   - Pre-trained GloVe embeddings (300d)
@@ -12,7 +12,7 @@ This repository contains the implementation and evaluation of Deep Averaging Net
 
 - `main.py` – Training, testing, and experiment workflow using PyTorch.
 
-## 🧠 Models
+## Models
 
 | Architecture     | Embeddings        | Train Acc. | Dev Acc. |
 |------------------|-------------------|------------|----------|
@@ -24,18 +24,18 @@ This repository contains the implementation and evaluation of Deep Averaging Net
 | DAN (2-layer)    | BPE (vocab 5k)     | 97.9%      | 77.4%    |
 | DAN (2-layer)    | BPE (vocab 30k)    | 99.0%      | 73.4%    |
 
-## 🔍 Additional Work
+## Additional Work
 
 - Includes a brief theoretical analysis of the Skip-Gram model and vector optimization for simple word-context pairs.
 
-## 🛠 Requirements
+## Requirements
 
 - Python 3.8+
 - PyTorch
 - NumPy
 - SentencePiece (for BPE)
 
-## 🚀 Running the Code
+## Running the Code
 
 To train a model:
 
