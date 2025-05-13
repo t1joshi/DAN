@@ -1,43 +1,43 @@
 # DAN
-This repository contains the implementation and analysis of various Deep Averaging Network (DAN) models for sentiment classification using the Stanford Sentiment Treebank dataset.
 
-📁 Contents
-DANmodels.py: Implements two- and three-layer DANs using pre-trained GloVe embeddings and randomly initialized embeddings.
+This repository contains the implementation and evaluation of Deep Averaging Network (DAN) models for sentiment classification on the Stanford Sentiment Treebank dataset.
 
-SUBWORDDANmodels.py: Implements DAN models using Byte Pair Encoding (BPE) subword tokenization with various vocabulary sizes.
+## 📁 Project Structure
 
-main.py: Handles training, evaluation, and experiment orchestration.
+- `DANmodels.py` – Implements 2-layer and 3-layer DANs using:
+  - Pre-trained GloVe embeddings (300d)
+  - Randomly initialized embeddings
 
-🧠 Models
-N2NDAN / N3NDAN: 2-layer and 3-layer DAN architectures.
+- `SUBWORDDANmodels.py` – Implements DANs using Byte Pair Encoding (BPE) with vocab sizes of 5k, 10k, and 30k.
 
-Embedding Sources:
+- `main.py` – Training, testing, and experiment workflow using PyTorch.
 
-Pre-trained GloVe (300d)
+## 🧠 Models
 
-Random initialization
+| Architecture     | Embeddings        | Train Acc. | Dev Acc. |
+|------------------|-------------------|------------|----------|
+| DAN (2-layer)    | GloVe (300d)       | 98.9%      | 77.3%    |
+| DAN (3-layer)    | GloVe (300d)       | 98.6%      | 78.1%    |
+| DAN (2-layer)    | Random             | 99.3%      | 78.6%    |
+| DAN (3-layer)    | Random             | 98.5%      | 77.8%    |
+| DAN (2-layer)    | BPE (vocab 10k)    | 99.1%      | 77.6%    |
+| DAN (2-layer)    | BPE (vocab 5k)     | 97.9%      | 77.4%    |
+| DAN (2-layer)    | BPE (vocab 30k)    | 99.0%      | 73.4%    |
 
-BPE subwords (vocab sizes: 5k, 10k, 30k)
+## 🔍 Additional Work
 
-📊 Results Summary
-Model Type	Train Accuracy	Dev Accuracy
-DAN (GloVe, 2L)	98.9%	77.3%
-DAN (GloVe, 3L)	98.6%	78.1%
-DAN (Random, 2L)	99.3%	78.6%
-DAN (Random, 3L)	98.5%	77.8%
-DAN (BPE 10k, 2L)	99.1%	77.6%
-DAN (BPE 5k, 2L)	97.9%	77.4%
-DAN (BPE 30k, 2L)	99.0%	73.4%
+- Includes a brief theoretical analysis of the Skip-Gram model and vector optimization for simple word-context pairs.
 
-🧪 Other Components
-Skip-Gram model analysis to understand vector relationships and context probability estimation.
+## 🛠 Requirements
 
-📦 Requirements
-Python 3.8+
+- Python 3.8+
+- PyTorch
+- NumPy
+- SentencePiece (for BPE)
 
-PyTorch
+## 🚀 Running the Code
 
-NumPy
+To train a model:
 
-SentencePiece (for BPE)
-
+```bash
+python main.py --model N2NDAN --use_glove
